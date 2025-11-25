@@ -3,17 +3,27 @@ Simulating the Hybrid Quantum-Classical Photonic Neural Network (HQPNN) from Aus
 
 **Reference:**  
 - Hybrid Quantum-Classical Photonic Neural Networks (arXiv:2407.02366v2 [quant-ph], 14 Jul 2024)  
-Tristan Austin, Andrew Hayman, Nir Rotenberg, Simon Bilodeau, Bhavin J. Shastri
+Tristan Austin, Andrew Hayman, Nir Rotenberg, Simon Bilodeau, Bhavin J. Shastri (https://arxiv.org/pdf/2407.02366)
 
 - Strawberry fields documentation (https://strawberryfields.readthedocs.io/en/stable/)
 - PennyLane-Strawberry Fields Plugin (https://docs.pennylane.ai/projects/strawberryfields/en/latest/)
 
   
 ## Model Architecture
+
+Classical Preprocessing:
+8 input neurons -> 10 neurons (y1 to y10 which are used for encoding)
+
+Quantum circuit/layer:
 ```                                       _________             __________
 |0>----[D(y1,y2)]-[S(y3,y4)]-[Φ(y5) ]-|U1(θ1,Φ1)|--[S(s1)]--| U2(θ2,Φ2)|--[Dα1]--[Φk1]--[Homodyne measurement]
 |0>----[D(y6,y7)]-[S(y8,y9)]-[Φ(y10)]-|_________|--[S(s2)]--|__________|--[Dα2]--[Φk2]--[Homodyne measurement]
+
+where D is Displacement gate, squeezing (S) and non-Gaussian Kerr (Φ) gates, Ui is linear interferometer.
 ```
+
+Classical Postprocessing:
+2 (or number of qumodes) to 4 (number of classes)
 
 ## Key Features
 
