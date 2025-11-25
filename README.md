@@ -2,11 +2,20 @@
 Simulating the Hybrid Quantum-Classical Photonic Neural Network (HQPNN) from Austin et al.
 
 **Reference:**  
-Hybrid Quantum-Classical Photonic Neural Networks (arXiv:2407.02366v2 [quant-ph], 14 Jul 2024)  
+- Hybrid Quantum-Classical Photonic Neural Networks (arXiv:2407.02366v2 [quant-ph], 14 Jul 2024)  
 Tristan Austin, Andrew Hayman, Nir Rotenberg, Simon Bilodeau, Bhavin J. Shastri
 
+- Strawberry fields documentation (https://strawberryfields.readthedocs.io/en/stable/)
+- PennyLane-Strawberry Fields Plugin (https://docs.pennylane.ai/projects/strawberryfields/en/latest/)
 
- ## Key Features
+  
+## Model Architecture
+```                                       _________             __________
+|0>----[D(y1,y2)]-[S(y3,y4)]-[Φ(y5) ]-|U1(θ1,Φ1)|--[S(s1)]--| U2(θ2,Φ2)|--[Dα1]--[Φk1]--[Homodyne measurement]
+|0>----[D(y6,y7)]-[S(y8,y9)]-[Φ(y10)]-|_________|--[S(s2)]--|__________|--[Dα2]--[Φk2]--[Homodyne measurement]
+```
+
+## Key Features
 
 ### 1. Complete Simulation Pipeline
 - Prepares synthetic classification datasets with normalization and train/validation/test splits.
